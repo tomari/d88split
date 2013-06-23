@@ -40,6 +40,7 @@ $title, $len
       print $dst $buf;
       read($src,$buf,$len-32);
       print $dst $buf;
+      close $dst;
       print STDOUT $title." => ".$dstname." ( ".$len." bytes)\n";
     }
     $filecnt=$filecnt+1;
