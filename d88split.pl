@@ -20,16 +20,18 @@ if($#ARGV==1 && $ARGV[0] =~ /^[le]$/) {
   my ($srcname,$srcpath,$srcsuffix) = fileparse($ARGV[1],qr/\.[^.]*/);
   my $filecnt=1;
   if($ARGV[0] =~ "l") {
-    print STDERR " Image                           Bytes \n".
-                 "---------------------------------------\n";
+    print STDERR " Image        Protect    Type     Bytes \n".
+                 "----------------------------------------\n";
   }
   do {
     read($src,$buf,32);
-    my ($title,$len) = unpack("a28V",$buf);
+    my ($title,$wpp,$dsktyp,$len) = unpack("a17x9CCV",$buf);
+    my $dsktyps=("2D","2DD","2HD")[$dsktyp>>4];
+    my $wps=$wpp?1:0;
     if($ARGV[0] =~ "l") {
       format STDOUT =
-@<<<<<<<<<<<<<<<<<<<<<<<<<<< @########
-$title, $len
+@<<<<<<<<<<<<<<<< @##    @<<<< @########
+$title, $wps, $dsktyps, $len
 .
       write();
       seek($src,$len-32,1);

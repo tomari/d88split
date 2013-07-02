@@ -2,7 +2,7 @@
 
 Splits concatenated D88/D77 disk images.
 * **D88** is an image format for NEC PC-88/PC-98 floppy disks.
-* **D77** is the same format for Fujitsu FM77 series computers.
+* **D77** is the same format for Fujitsu FM-77 series computers.
 
 Written in Perl, released to the public domain.
 
@@ -11,12 +11,12 @@ Written in Perl, released to the public domain.
 List images packed in a file:
 ```
 % ./d88split.pl l kohaku.d77
- Image                           Bytes 
----------------------------------------
-Kohaku_1                        473776
-Kohaku_2                        473776
-Kohaku_3                        473776
-Kohaku_4                        473776
+ Image        Protect    Type     Bytes 
+----------------------------------------
+Kohaku_1            0    2D       473776
+Kohaku_2            0    2D       473776
+Kohaku_3            0    2D       473776
+Kohaku_4            0    2D       473776
 ```
 
 Extract images:
