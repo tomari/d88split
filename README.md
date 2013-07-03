@@ -27,3 +27,16 @@ Kohaku_2 => kohaku#2.d77 ( 473776 bytes)
 Kohaku_3 => kohaku#3.d77 ( 473776 bytes)
 Kohaku_4 => kohaku#4.d77 ( 473776 bytes)
 ```
+
+# mhlt2d88
+
+Converts Mahalito disk image to D88 format.
+* **Mahalito** is a disk image tool for PC-98.
+* **D88** is another popular format for transferring PC-98 disk images.
+
+## Examples
+
+```
+./mhlt2d88.pl pc100dos.2dd > pc100dos.d88
+```
+pc100dos.2dd and pc100dos.dat are converted to pc100dos.d88.
