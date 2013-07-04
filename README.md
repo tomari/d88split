@@ -40,3 +40,28 @@ Converts Mahalito disk image to D88 format.
 ./mhlt2d88.pl pc100dos.2dd > pc100dos.d88
 ```
 pc100dos.2dd and pc100dos.dat are converted to pc100dos.d88.
+
+# flatmhlt
+
+Flatten Mahalito disk image for modifying contents
+
+Mahalito compresses disk image data file (*.dat) using
+a simple algorithm. This utility uncompresses the data file
+while keeping the output a valid Mahalito disk image.
+
+This is useful when retreiving or modifying files in a image.
+The flattened data file (*.dat) can be mounted by:
+```
+% mount -t msdos -o loop pc100dos.dat /mnt
+```
+on Linux. See lofiadm manpage if you are using Solaris.
+After necessary changes the flattened image can be written
+back to a floppy disk using Mahalito.
+
+##Example
+
+```
+% flatmhlt.pl pc100dos.2dd [pc100dos.dat] flat
+    => converts pc100dos.2dd and pc100dos.dat to
+        a flat Mahalito image flat.2dd and flat.dat
+```
