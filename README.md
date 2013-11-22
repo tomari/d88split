@@ -65,3 +65,16 @@ back to a floppy disk using Mahalito.
     => converts pc100dos.2dd and pc100dos.dat to
         a flat Mahalito image flat.2dd and flat.dat
 ```
+
+# xdf2mhlt
+
+Converts X68k XDF disk image to Mahalito format.
+
+## Example
+
+```
+./xdf2mhlt.pl sharrier.xdf sharrier
+```
+convert sharrier.xdf to sharrier.2hd and sharrier.dat.
+
+
