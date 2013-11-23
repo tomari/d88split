@@ -61,10 +61,11 @@ sub xdf_to_mahalito {
       $repeat_chr=($repeatp>0)?$repeat_chr:"\0";
       my $lcyl=int($trk/2);
       my $lhead=int($trk&1);
+      my $lrecord=$sec+1;
       my $seclen=3;
       my $ddam=0;
       my $sector_info=pack("CCCCCCCC",$repeatp,$repeat_chr,
-			  $lcyl,$lhead,$sec,
+			  $lcyl,$lhead,$lrecord,
 			  $seclen,$seclen,
 			  $ddam);
       print $meta $sector_info;
