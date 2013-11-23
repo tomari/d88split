@@ -78,3 +78,18 @@ Converts X68k XDF disk image to Mahalito format.
 convert sharrier.xdf to sharrier.2hd and sharrier.dat.
 
 
+# d882mhlt
+
+Converts D88/D77 disk image to Mahalito format.
+Concatenated D88 disk images are supported.
+
+## Example
+
+```
+% ./d882mhlt.pl kohaku.d77 ko
+Kohaku_1 => ko#1.2d and ko#1.dat
+Kohaku_2 => ko#2.2d and ko#2.dat
+Kohaku_3 => ko#3.2d and ko#3.dat
+Kohaku_4 => ko#4.2d and ko#4.dat
+```
+
