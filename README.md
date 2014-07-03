@@ -77,6 +77,22 @@ Converts X68k XDF disk image to Mahalito format.
 ```
 convert sharrier.xdf to sharrier.2hd and sharrier.dat.
 
+# fdi2mhlt
+
+Converts Anex86 FDI disk image to Mahalito format
+
+2HD, 2DD images are supported (based on reverse-engineering).
+1.44 MB format is also supported on this tool, but Mahalito doesn't.
+Use flatmhlt.pl then dd the dat file to standard-formatted 1.44 MB diskette.
+
+## Example
+
+```
+$ ./fdi2mhlt.pl blkwarsv.fdi blkwarsv
+FDI: 1265664 bytes (4096 header + 1261568 body)
+77 cyls, 2 heads, 8 sectors/track, 1024 bytes/sector => body 1261568 bytes
+writing to blkwarsv.2hd and blkwarsv.dat
+```
 
 # d882mhlt
 
