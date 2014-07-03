@@ -3,7 +3,7 @@
 # 2013 H.Tomari. Public Domain.
 #
 use strict;
-use File::Basename;
+use warnings;
 my $usage=<< "EOL";
   % d882mhlt.pl input.d88 output
     => converts input.d88 to a Mahalito image output.{2d,2dd,2hd} and output.dat
@@ -11,7 +11,7 @@ EOL
 
 sub detect_repeat {
   my $data=shift;
-  my @dataarray=split(undef,$data);
+  my @dataarray=unpack('C*',$data);
   my $chr=$dataarray[0];
   foreach(@dataarray) {
     return undef if($_ ne $chr);
@@ -87,7 +87,7 @@ sub d88_to_mahalito {
 	  $quiet or print STDERR "C/H/R/N = ".$lcyl."/".$lhd."/".$lrec."/".$lsize."\n";
 	  my $rep_chr=detect_repeat($buf);
 	  my $isRepeat=(defined($rep_chr))?1:0;
-	  $rep_chr=($isRepeat)?$rep_chr:"\0";
+	  $rep_chr=($isRepeat)?$rep_chr:0;
 	  my $mhlt_ddam=($del==0x10)?1:0;
 	  my $mhlt_sec_header=pack("CCCCCCCC",$isRepeat,$rep_chr,
 				   $lcyl,$lhd,$lrec,$lsize,$lsize,$mhlt_ddam);

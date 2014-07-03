@@ -3,7 +3,7 @@
 # 2013 H.Tomari. Public Domain.
 #
 use strict;
-use File::Basename;
+use warnings;
 
 my $usage=<< "EOL";
   % xdf2mhlt.pl input.xdf output
@@ -12,7 +12,7 @@ EOL
 
 sub detect_repeat {
   my $data=shift;
-  my @dataarray=split(undef,$data);
+  my @dataarray=unpack('C*',$data);
   my $chr=$dataarray[0];
   foreach(@dataarray) {
     return undef if($_ ne $chr);
@@ -58,7 +58,7 @@ sub xdf_to_mahalito {
       }
       my $repeat_chr=detect_repeat($sector_data);
       my $repeatp=(defined($repeat_chr))?1:0;
-      $repeat_chr=($repeatp>0)?$repeat_chr:"\0";
+      $repeat_chr=($repeatp>0)?$repeat_chr:0;
       my $lcyl=int($trk/2);
       my $lhead=int($trk&1);
       my $lrecord=$sec+1;
