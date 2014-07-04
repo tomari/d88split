@@ -109,3 +109,16 @@ Kohaku_3 => ko#3.2d and ko#3.dat
 Kohaku_4 => ko#4.2d and ko#4.dat
 ```
 
+# nfd2mhlt
+
+Converts T98-Next NFD floppy disk image to Mahalito format.
+Tested with NFD R0 images only.
+NFD R1 support is experimental, and it hasn't been tested.
+This is because no R1 image is currently available to me.
+
+```
+% ./nfd2mhlt.pl No1.NFD dos62no1
+NFD R0 #cyl 77 #hd 2 #sec 8 (1024 byte/sector)
+writing to dos62no1.2hd and dos62no1.dat
+```
+
