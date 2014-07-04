@@ -140,7 +140,8 @@ sub nfd_to_mahalito {
   open(my $data,'>',$dataname) or die "$!";
   binmode($meta);
   binmode($data);
-  my $mahalito_header=pack("a10C","ver 1.10  ",$ncyl);
+  my %mhltver=("2hd"=>"ver 1.10  ","2dd"=>"2DD ver1.0","2d"=>"2D  ver1.0");
+  my $mahalito_header=pack("a10C",$mhltver{$mediatype},$ncyl);
   print $meta $mahalito_header;
 
   # read tracks
