@@ -122,3 +122,9 @@ NFD R0 #cyl 77 #hd 2 #sec 8 (1024 byte/sector)
 writing to dos62no1.2hd and dos62no1.dat
 ```
 
+# References
+
+1. mahalito.doc in mhlt214.lzh -- Describes Mahalito format
+2. quasi88-0.6.4/document/FORMAT.TXT in quasi88-0.6.4.tgz -- describes D88 format
+3. http://www.geocities.jp/t98next/nfdr0.txt -- NFD R0 format specification
+4. http://www.geocities.jp/t98next/nfdr1.txt -- NFD R1 format specification
