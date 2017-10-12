@@ -58,7 +58,7 @@ on Linux. See lofiadm manpage if you are using Solaris.
 After necessary changes the flattened image can be written
 back to a floppy disk using Mahalito.
 
-##Example
+## Example
 
 ```
 % flatmhlt.pl pc100dos.2dd [pc100dos.dat] flat
