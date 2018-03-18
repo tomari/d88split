@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/code
+    docker:
+      - image: circleci/buildpack-deps:xenial
+    steps:
+      - checkout
+      - run:
+          name: Syntax check
+          command: for i in *.pl ; do perl -c $i ; done
+
