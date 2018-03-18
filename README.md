@@ -1,5 +1,7 @@
 # d88split
 
+[![CircleCI](https://circleci.com/gh/tomari/d88split.svg?style=svg)](https://circleci.com/gh/tomari/d88split)
+
 Splits concatenated D88/D77 disk images.
 * **D88** is an image format for NEC PC-88/PC-98 floppy disks.
 * **D77** is the same format for Fujitsu FM-77 series computers.
